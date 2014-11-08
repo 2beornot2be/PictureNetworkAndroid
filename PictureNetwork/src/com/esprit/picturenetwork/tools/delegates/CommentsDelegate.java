@@ -1,7 +1,7 @@
 package com.esprit.picturenetwork.tools.delegates;
 
 public class CommentsDelegate {
-	public static final String basicUrl = "http://172.16.179.161:8080/pictureNetworkWeb/pictureCommentsLocal/";
+	public static final String basicUrl = "http://192.168.1.2:8080/pictureNetworkWeb/pictureCommentsLocal/";
 	public static String addUrl = basicUrl +"add";
 	public static String updateUrl = basicUrl +"update";
 	public static String removeUrl = basicUrl +"remove";
