@@ -1,11 +1,15 @@
 package com.esprit.picturenetwork;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 public class PictureNetwork extends Activity {
+	public final static String EXTRA_MESSAGE = "com.esprit.picturenetwork.picture";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,5 +34,12 @@ public class PictureNetwork extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	public void listComments(View view) {
+	    Intent intent = new Intent(this, ListCommentsOfPictureActivity.class);
+	    //id de l'image
+	    String message = "1";
+	    intent.putExtra(EXTRA_MESSAGE, message);
+	    startActivity(intent);
 	}
 }
