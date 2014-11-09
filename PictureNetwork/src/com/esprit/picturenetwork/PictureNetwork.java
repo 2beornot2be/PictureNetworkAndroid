@@ -9,7 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 
 public class PictureNetwork extends Activity {
-	public final static String EXTRA_MESSAGE = "com.esprit.picturenetwork.picture";
+	public final static String PICTURE_ID = "com.esprit.picturenetwork.picture.id";
+	public final static String USER_ID = "com.esprit.picturenetwork.user.id"; 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,10 @@ public class PictureNetwork extends Activity {
 	    Intent intent = new Intent(this, ListCommentsOfPictureActivity.class);
 	    //id de l'image
 	    String message = "1";
-	    intent.putExtra(EXTRA_MESSAGE, message);
+	    // id du user
+	    String userId = "1";
+	    intent.putExtra(USER_ID, userId);
+	    intent.putExtra(PICTURE_ID, message);
 	    startActivity(intent);
 	}
 }

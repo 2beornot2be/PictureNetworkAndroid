@@ -9,25 +9,83 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.esprit.picturenetwork.ListCommentsOfPictureActivity" >
 
+    <ListView
+        android:id="@+id/listViewComments"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:minHeight="300px"
+        android:minWidth="500px"
+        android:scrollbarAlwaysDrawVerticalTrack="true" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/pictureName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/listViewComments"
+        android:layout_marginRight="27dp"
+        android:layout_marginTop="38dp"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/pictureDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/image"
+        android:layout_alignRight="@+id/pictureName"
+        android:layout_alignTop="@+id/image"
+        android:layout_marginTop="16dp"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/pictureOwner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/pictureName"
+        android:layout_alignLeft="@+id/image"
+        android:layout_marginBottom="18dp"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold" />
+
     <ImageView
         android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:minHeight="300px"
-        android:minWidth="300px"
+        android:layout_alignLeft="@+id/listViewComments"
+        android:layout_below="@+id/pictureOwner"
+        android:minHeight="200px"
+        android:minWidth="200px"
         android:src="@drawable/picture_contains_comments" />
 
-    <ListView
-        android:id="@+id/listViewComments"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/commentToAdd"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/listViewComments"
+        android:layout_alignLeft="@+id/image"
         android:layout_below="@+id/image"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="17dp" >
-    </ListView>
+        android:layout_toLeftOf="@+id/buttonComment"
+        android:ems="10"
+        android:inputType="textMultiLine" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/buttonComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/commentToAdd"
+        android:layout_alignBottom="@+id/commentToAdd"
+        android:layout_alignRight="@+id/listViewComments"
+        android:onClick="sendComment"
+        android:text="COMMENT" />
 
 </RelativeLayout>
